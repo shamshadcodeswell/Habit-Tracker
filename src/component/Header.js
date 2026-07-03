@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "url:../../resources/app-logo.png";
 const Header = () => {
   console.log(logo);
@@ -9,10 +10,19 @@ const Header = () => {
       </div>
       <div className="navigation-bar">
         <ul className="nav-items">
-          <li>Home</li>
-          <li>Week</li>
-          <li>Month</li>
-          <li>Analytics</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li>
+            <Link to="/week">Week</Link>
+          </li>
+          <li>
+            <Link to="/month">Month</Link>
+          </li>
+          <li>
+            <Link to="Analytics">Analytics</Link>
+          </li>
         </ul>
       </div>
     </div>
