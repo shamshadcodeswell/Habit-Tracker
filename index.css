@@ -1,5 +1,3 @@
-/* index.css */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
@@ -68,4 +66,196 @@ body {
 .nav-items li.active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Today's Task List ── */
+.today-habits {
+  max-width: 620px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Create Habit Button ── */
+.today-habits > button:first-child {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 12px 28px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.today-habits > button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 83, 100, 0.35);
+}
+
+.today-habits > button:first-child:active {
+  transform: translateY(0);
+}
+
+/* ── Habit Form ── */
+.habit-form {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.form-open {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-closed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 24px;
+  margin-bottom: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.habit-form input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background: #f1f5f9;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.habit-form input[type="text"]:focus {
+  border-color: #2c5364;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.1);
+}
+
+.habit-form input[type="text"]::placeholder {
+  color: #94a3b8;
+}
+
+/* ── Form Extra Info ── */
+.form-extraInfo {
+  margin: 16px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border-left: 3px solid #2c5364;
+  border-radius: 0 8px 8px 0;
+}
+
+.form-extraInfo p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.form-extraInfo p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Add Button ── */
+.form-addButton {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #2c5364;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-addButton:hover {
+  background: #203a43;
+}
+
+.form-addButton:active {
+  transform: scale(0.98);
+}
+
+/* ── Individual Task ── */
+.individual-task {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.individual-task:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ── Custom Checkbox ── */
+.task-checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.task-checkbox:checked {
+  background: #2c5364;
+  border-color: #2c5364;
+}
+
+.task-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.task-checkbox:hover {
+  border-color: #2c5364;
+}
+
+/* ── Task Label ── */
+.individual-task span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1e293b;
+  transition: all 0.2s ease;
+}
+
+.task-checkbox:checked ~ span {
+  text-decoration: line-through;
+  color: #94a3b8;
 }

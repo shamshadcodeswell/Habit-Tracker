@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header">
       <div className="brand">
         <img className="logo" alt="logo" src={logo}></img>
-        <h1 className="Title">Habit Tracker</h1>
+        <h2 className="Title">Habit Tracker</h2>
       </div>
       <div className="navigation-bar">
         <ul className="nav-items">
