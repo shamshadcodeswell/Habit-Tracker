@@ -15,6 +15,9 @@ const TodayTaskList = () => {
     );
   };
 
+  const completed = habits.filter((habit) => habit.completed === true);
+  const Incomplete = habits.filter((habit) => habit.completed === false);
+
   return (
     <div className="today-habits">
       <button onClick={() => setShowForm(!showForm)}>Create a habit</button>
@@ -24,14 +27,37 @@ const TodayTaskList = () => {
         setHabit={setHabit}
         habits={habits}
       ></HabitForm>
-      {habits.map((habit) => {
-        return (
-          <IndividualTasks
-            key={habit.id}
-            habit={habit}
-            toggleHabit={toggleHabit}
-          ></IndividualTasks>
-        );
+      {Incomplete.length > 0 ? (
+        <h2 className="task-status-heading">Incomplete</h2>
+      ) : (
+        <div></div>
+      )}
+      {Incomplete.map((habit) => {
+        if (Incomplete)
+          return (
+            <IndividualTasks
+              key={habit.id}
+              habit={habit}
+              toggleHabit={toggleHabit}
+            ></IndividualTasks>
+          );
+      })}
+
+      {completed.length > 0 ? (
+        <h2 className="task-status-heading">Completed</h2>
+      ) : (
+        <div></div>
+      )}
+      {completed.map((habit) => {
+        if (habit.completed) {
+          return (
+            <IndividualTasks
+              key={habit.id}
+              habit={habit}
+              toggleHabit={toggleHabit}
+            ></IndividualTasks>
+          );
+        }
       })}
     </div>
   );
