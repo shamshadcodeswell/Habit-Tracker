@@ -27,7 +27,7 @@ const Weekly = () => {
   //   const lastDate =
   return (
     <div>
-      <h1 className="heading">Weekly View</h1>
+      <h1 className="weekly-view-heading">Weekly View</h1>
       <div className="dayCards Container"></div>
       <DayCards weekDays={weekDays}></DayCards>
     </div>

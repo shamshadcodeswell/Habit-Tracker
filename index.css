@@ -69,6 +69,32 @@ body {
 }
 
 /* ── Today's Task List ── */
+
+/* ── Homepage Date & Day ── */
+.homepage {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+  text-align: center;
+}
+
+.homePage-today-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.homePage-today-day {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f2027;
+  letter-spacing: -0.5px;
+  margin-top: 2px;
+  margin-bottom: 28px;
+}
+
 .today-habits {
   max-width: 620px;
   margin: 32px auto;
@@ -347,4 +373,13 @@ body {
 /* ── Incomplete habits get an amber accent ── */
 .incomplete.Habits ~ .habit-name {
   border-left-color: #f59e0b;
+}
+
+.weekly-view-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f2027;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin: 32px 0 28px;
 }

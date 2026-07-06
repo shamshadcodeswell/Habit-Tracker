@@ -8,11 +8,15 @@ const CurrentDay = () => {
     return `${y}-${m}-${d}`;
   };
 
-  const today = getToday();
+  // const today = getToday(); this was original date logic, but commented out  keeping today =""2026-07-03"" at the date of creation of project to keep the program running as the data is hardcoded and Date() will produce the date in which it will run, causing the program to break
+  const today = "2026-07-03";
   console.log(today);
   return (
     <div className="homepage">
-      <h1 className="homePage-today">{today}</h1>
+      <h1 className="homePage-today-date">{today}</h1>
+      <h1 className="homePage-today-day">
+        {new Date(today).toLocaleDateString("en-IN", { weekday: "long" })}
+      </h1>
       <TodayTaskList today={today}></TodayTaskList>
     </div>
   );
